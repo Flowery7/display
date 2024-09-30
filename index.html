@@ -14,7 +14,6 @@
             padding: 20px;
             background-color: #f0f0f0;
             font-family: 'Arial', sans-serif;
-            transform-origin: top left; /* Set the origin for zooming */
         }
 
         h1 {
@@ -70,12 +69,15 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
             background-color: white;
             position: relative;
+            width: 100%; /* Adjusts width to fit parent */
+            max-width: 480px; /* Maximum width for frames */
             display: none; /* Hide frames by default */
         }
 
         iframe {
-            border: none;
-            display: block; /* Ensures iframes take full space */
+            width: 100%; /* Full width of the frame */
+            height: 100%; /* Full height of the frame */
+            border: none; /* No border */
         }
 
         .label {
@@ -130,27 +132,27 @@
     <div class="dropdown">
         <div class="section" id="mobileSection">Mobile Displays</div>
         <div class="frames-container" id="mobileFrames">
-            <div class="frame" id="mobileFrame1" style="width: 187.5px; height: 333.5px;">
+            <div class="frame" id="mobileFrame1" style="height: 333.5px;">
                 <div class="label">iPhone 6/7/8</div>
                 <iframe id="frameMobile1"></iframe>
                 <div class="size-reference">375 x 667</div>
             </div>
-            <div class="frame" id="mobileFrame2" style="width: 207px; height: 448px;">
+            <div class="frame" id="mobileFrame2" style="height: 448px;">
                 <div class="label">iPhone X/XS/11 Pro</div>
                 <iframe id="frameMobile2"></iframe>
                 <div class="size-reference">414 x 896</div>
             </div>
-            <div class="frame" id="mobileFrame3" style="width: 180px; height: 320px;">
+            <div class="frame" id="mobileFrame3" style="height: 320px;">
                 <div class="label">Galaxy S10</div>
                 <iframe id="frameMobile3"></iframe>
                 <div class="size-reference">360 x 640</div>
             </div>
-            <div class="frame" id="mobileFrame4" style="width: 187.5px; height: 406px;">
+            <div class="frame" id="mobileFrame4" style="height: 406px;">
                 <div class="label">iPhone X/XS</div>
                 <iframe id="frameMobile4"></iframe>
                 <div class="size-reference">375 x 812</div>
             </div>
-            <div class="frame" id="mobileFrame5" style="width: 196.5px; height: 425.5px;">
+            <div class="frame" id="mobileFrame5" style="height: 425.5px;">
                 <div class="label">Google Pixel 5</div>
                 <iframe id="frameMobile5"></iframe>
                 <div class="size-reference">393 x 851</div>
@@ -161,27 +163,27 @@
     <div class="dropdown">
         <div class="section" id="tabletSection">iPad Displays</div>
         <div class="frames-container" id="tabletFrames">
-            <div class="frame" id="tabletFrame1" style="width: 384px; height: 512px;">
+            <div class="frame" id="tabletFrame1" style="height: 512px;">
                 <div class="label">iPad (9.7-inch)</div>
                 <iframe id="frameTablet1"></iframe>
                 <div class="size-reference">768 x 1024</div>
             </div>
-            <div class="frame" id="tabletFrame2" style="width: 417px; height: 556px;">
+            <div class="frame" id="tabletFrame2" style="height: 556px;">
                 <div class="label">iPad Air (10.5-inch)</div>
                 <iframe id="frameTablet2"></iframe>
                 <div class="size-reference">834 x 1112</div>
             </div>
-            <div class="frame" id="tabletFrame3" style="width: 405px; height: 540px;">
+            <div class="frame" id="tabletFrame3" style="height: 540px;">
                 <div class="label">iPad (10.2-inch)</div>
                 <iframe id="frameTablet3"></iframe>
                 <div class="size-reference">810 x 1080</div>
             </div>
-            <div class="frame" id="tabletFrame4" style="width: 512px; height: 683px;">
+            <div class="frame" id="tabletFrame4" style="height: 683px;">
                 <div class="label">iPad Pro (12.9-inch)</div>
                 <iframe id="frameTablet4"></iframe>
                 <div class="size-reference">1024 x 1366</div>
             </div>
-            <div class="frame" id="tabletFrame5" style="width: 1024px; height: 1366px;">
+            <div class="frame" id="tabletFrame5" style="height: 1366px;">
                 <div class="label">iPad Pro (12.9-inch) 3rd Gen</div>
                 <iframe id="frameTablet5"></iframe>
                 <div class="size-reference">2048 x 2732</div>
@@ -192,27 +194,27 @@
     <div class="dropdown">
         <div class="section" id="desktopSection">Desktop Displays</div>
         <div class="frames-container" id="desktopFrames">
-            <div class="frame" id="desktopFrame1" style="width: 683px; height: 384px;">
+            <div class="frame" id="desktopFrame1" style="height: 384px;">
                 <div class="label">1366 x 768</div>
                 <iframe id="frameDesktop1"></iframe>
                 <div class="size-reference">1366 x 768</div>
             </div>
-            <div class="frame" id="desktopFrame2" style="width: 960px; height: 540px;">
+            <div class="frame" id="desktopFrame2" style="height: 540px;">
                 <div class="label">1920 x 1080</div>
                 <iframe id="frameDesktop2"></iframe>
                 <div class="size-reference">1920 x 1080</div>
             </div>
-            <div class="frame" id="desktopFrame3" style="width: 720px; height: 450px;">
+            <div class="frame" id="desktopFrame3" style="height: 450px;">
                 <div class="label">1440 x 900</div>
                 <iframe id="frameDesktop3"></iframe>
                 <div class="size-reference">1440 x 900</div>
             </div>
-            <div class="frame" id="desktopFrame4" style="width: 640px; height: 400px;">
+            <div class="frame" id="desktopFrame4" style="height: 400px;">
                 <div class="label">1280 x 800</div>
                 <iframe id="frameDesktop4"></iframe>
                 <div class="size-reference">1280 x 800</div>
             </div>
-            <div class="frame" id="desktopFrame5" style="width: 800px; height: 450px;">
+            <div class="frame" id="desktopFrame5" style="height: 450px;">
                 <div class="label">1600 x 900</div>
                 <iframe id="frameDesktop5"></iframe>
                 <div class="size-reference">1600 x 900</div>
@@ -224,50 +226,63 @@
         const loadButton = document.getElementById('loadButton');
         const urlInput = document.getElementById('urlInput');
 
-        const frames = document.querySelectorAll('.frame');
-
-        const showFrames = (category) => {
-            frames.forEach(frame => {
-                frame.style.display = 'none'; // Hide all frames
-            });
-            document.querySelectorAll(`#${category}Frames .frame`).forEach(frame => {
-                frame.style.display = 'block'; // Show only frames in the selected category
-            });
-        };
-
-        document.getElementById('mobileSection').onclick = () => showFrames('mobile');
-        document.getElementById('tabletSection').onclick = () => showFrames('tablet');
-        document.getElementById('desktopSection').onclick = () => showFrames('desktop');
-
+        // Load URL into frames
         loadButton.addEventListener('click', () => {
             const url = urlInput.value;
-            if (url) {
-                frames.forEach(frame => {
-                    const iframe = frame.querySelector('iframe');
-                    iframe.src = url; // Load the URL into each iframe
-                });
-            } else {
-                alert('Please enter a valid URL.');
-            }
+            const frames = document.querySelectorAll('iframe');
+
+            frames.forEach(frame => {
+                frame.src = url;
+            });
         });
+
+        // Show or hide mobile frames
+        document.getElementById('mobileSection').addEventListener('click', () => {
+            toggleFrames('mobileFrames');
+        });
+
+        // Show or hide tablet frames
+        document.getElementById('tabletSection').addEventListener('click', () => {
+            toggleFrames('tabletFrames');
+        });
+
+        // Show or hide desktop frames
+        document.getElementById('desktopSection').addEventListener('click', () => {
+            toggleFrames('desktopFrames');
+        });
+
+        function toggleFrames(framesId) {
+            const framesContainer = document.getElementById(framesId);
+            const frames = framesContainer.querySelectorAll('.frame');
+
+            frames.forEach(frame => {
+                frame.style.display = frame.style.display === 'none' || frame.style.display === '' ? 'block' : 'none';
+            });
+        }
 
         // Zoom functionality
         let zoomLevel = 1;
 
-        const zoomInButton = document.getElementById('zoomInButton');
-        const zoomOutButton = document.getElementById('zoomOutButton');
-
-        zoomInButton.addEventListener('click', () => {
+        document.getElementById('zoomInButton').addEventListener('click', () => {
             zoomLevel += 0.1;
-            document.body.style.transform = `scale(${zoomLevel})`;
+            applyZoom();
         });
 
-        zoomOutButton.addEventListener('click', () => {
-            if (zoomLevel > 0.1) {
-                zoomLevel -= 0.1;
-                document.body.style.transform = `scale(${zoomLevel})`;
-            }
+        document.getElementById('zoomOutButton').addEventListener('click', () => {
+            zoomLevel = Math.max(0.1, zoomLevel - 0.1);
+            applyZoom();
         });
+
+        function applyZoom() {
+            const frames = document.querySelectorAll('iframe');
+            frames.forEach(frame => {
+                frame.style.transform = `scale(${zoomLevel})`;
+                frame.style.transformOrigin = 'top left';
+                frame.style.width = `${100 / zoomLevel}%`;
+                frame.style.height = `${100 / zoomLevel}%`;
+            });
+        }
     </script>
+
 </body>
 </html>
