@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Display Tool</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif;
+            transform-origin: top left; /* Set the origin for zooming */
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .dropdown {
+            margin: 10px 0;
+        }
+
+        .frames-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .frame {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            position: relative;
+            display: none; /* Hide frames by default */
+        }
+
+        iframe {
+            border: none;
+            display: block; /* Ensures iframes take full space */
+        }
+
+        .label {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .size-reference {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 3px 5px;
+            border-radius: 3px;
+            font-size: 10px;
+        }
+
+        .section {
+            margin: 10px 0;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            width: 150px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .section:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Responsive Display Tool</h1>
+    <div class="controls">
+        <input type="text" id="urlInput" placeholder="Enter URL here">
+        <button id="loadButton">Load URL</button>
+        <button id="zoomInButton">Zoom In</button>
+        <button id="zoomOutButton">Zoom Out</button>
+    </div>
+
+    <div class="dropdown">
+        <div class="section" id="mobileSection">Mobile Displays</div>
+        <div class="frames-container" id="mobileFrames">
+            <div class="frame" id="mobileFrame1" style="width: 187.5px; height: 333.5px;">
+                <div class="label">iPhone 6/7/8</div>
+                <iframe id="frameMobile1"></iframe>
+                <div class="size-reference">375 x 667</div>
+            </div>
+            <div class="frame" id="mobileFrame2" style="width: 207px; height: 448px;">
+                <div class="label">iPhone X/XS/11 Pro</div>
+                <iframe id="frameMobile2"></iframe>
+                <div class="size-reference">414 x 896</div>
+            </div>
+            <div class="frame" id="mobileFrame3" style="width: 180px; height: 320px;">
+                <div class="label">Galaxy S10</div>
+                <iframe id="frameMobile3"></iframe>
+                <div class="size-reference">360 x 640</div>
+            </div>
+            <div class="frame" id="mobileFrame4" style="width: 187.5px; height: 406px;">
+                <div class="label">iPhone X/XS</div>
+                <iframe id="frameMobile4"></iframe>
+                <div class="size-reference">375 x 812</div>
+            </div>
+            <div class="frame" id="mobileFrame5" style="width: 196.5px; height: 425.5px;">
+                <div class="label">Google Pixel 5</div>
+                <iframe id="frameMobile5"></iframe>
+                <div class="size-reference">393 x 851</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <div class="section" id="tabletSection">iPad Displays</div>
+        <div class="frames-container" id="tabletFrames">
+            <div class="frame" id="tabletFrame1" style="width: 384px; height: 512px;">
+                <div class="label">iPad (9.7-inch)</div>
+                <iframe id="frameTablet1"></iframe>
+                <div class="size-reference">768 x 1024</div>
+            </div>
+            <div class="frame" id="tabletFrame2" style="width: 417px; height: 556px;">
+                <div class="label">iPad Air (10.5-inch)</div>
+                <iframe id="frameTablet2"></iframe>
+                <div class="size-reference">834 x 1112</div>
+            </div>
+            <div class="frame" id="tabletFrame3" style="width: 405px; height: 540px;">
+                <div class="label">iPad (10.2-inch)</div>
+                <iframe id="frameTablet3"></iframe>
+                <div class="size-reference">810 x 1080</div>
+            </div>
+            <div class="frame" id="tabletFrame4" style="width: 512px; height: 683px;">
+                <div class="label">iPad Pro (12.9-inch)</div>
+                <iframe id="frameTablet4"></iframe>
+                <div class="size-reference">1024 x 1366</div>
+            </div>
+            <div class="frame" id="tabletFrame5" style="width: 1024px; height: 1366px;">
+                <div class="label">iPad Pro (12.9-inch) 3rd Gen</div>
+                <iframe id="frameTablet5"></iframe>
+                <div class="size-reference">2048 x 2732</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <div class="section" id="desktopSection">Desktop Displays</div>
+        <div class="frames-container" id="desktopFrames">
+            <div class="frame" id="desktopFrame1" style="width: 683px; height: 384px;">
+                <div class="label">1366 x 768</div>
+                <iframe id="frameDesktop1"></iframe>
+                <div class="size-reference">1366 x 768</div>
+            </div>
+            <div class="frame" id="desktopFrame2" style="width: 960px; height: 540px;">
+                <div class="label">1920 x 1080</div>
+                <iframe id="frameDesktop2"></iframe>
+                <div class="size-reference">1920 x 1080</div>
+            </div>
+            <div class="frame" id="desktopFrame3" style="width: 720px; height: 450px;">
+                <div class="label">1440 x 900</div>
+                <iframe id="frameDesktop3"></iframe>
+                <div class="size-reference">1440 x 900</div>
+            </div>
+            <div class="frame" id="desktopFrame4" style="width: 640px; height: 400px;">
+                <div class="label">1280 x 800</div>
+                <iframe id="frameDesktop4"></iframe>
+                <div class="size-reference">1280 x 800</div>
+            </div>
+            <div class="frame" id="desktopFrame5" style="width: 800px; height: 450px;">
+                <div class="label">1600 x 900</div>
+                <iframe id="frameDesktop5"></iframe>
+                <div class="size-reference">1600 x 900</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loadButton = document.getElementById('loadButton');
+        const urlInput = document.getElementById('urlInput');
+
+        const frames = document.querySelectorAll('.frame');
+
+        const showFrames = (category) => {
+            frames.forEach(frame => {
+                frame.style.display = 'none'; // Hide all frames
+            });
+            document.querySelectorAll(`#${category}Frames .frame`).forEach(frame => {
+                frame.style.display = 'block'; // Show only frames in the selected category
+            });
+        };
+
+        document.getElementById('mobileSection').onclick = () => showFrames('mobile');
+        document.getElementById('tabletSection').onclick = () => showFrames('tablet');
+        document.getElementById('desktopSection').onclick = () => showFrames('desktop');
+
+        loadButton.addEventListener('click', () => {
+            const url = urlInput.value;
+            if (url) {
+                frames.forEach(frame => {
+                    const iframe = frame.querySelector('iframe');
+                    iframe.src = url; // Load the URL into each iframe
+                });
+            } else {
+                alert('Please enter a valid URL.');
+            }
+        });
+
+        // Zoom functionality
+        let zoomLevel = 1;
+
+        const zoomInButton = document.getElementById('zoomInButton');
+        const zoomOutButton = document.getElementById('zoomOutButton');
+
+        zoomInButton.addEventListener('click', () => {
+            zoomLevel += 0.1;
+            document.body.style.transform = `scale(${zoomLevel})`;
+        });
+
+        zoomOutButton.addEventListener('click', () => {
+            if (zoomLevel > 0.1) {
+                zoomLevel -= 0.1;
+                document.body.style.transform = `scale(${zoomLevel})`;
+            }
+        });
+    </script>
+</body>
+</html>
